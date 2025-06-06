@@ -24,7 +24,7 @@ pub(crate) fn process_command(
     Option<Duration>,
     Option<(u64, std::sync::mpsc::Receiver<u64>)>,
 ) {
-    const INPUT_BUF_DEFAULT: usize = 200000;
+    const INPUT_BUF_DEFAULT: usize = 524288;
     let buf_sz = std::env::var("RECISDB_INPUT_BUF_BYTES")
         .unwrap_or("".to_string())
         .parse()
